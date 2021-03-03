@@ -14,6 +14,15 @@ app.get("/api/customers", (req, res) => {
   res.send(customers);
 });
 
+let database = [
+  { id: 1, latitude: 60, longitude: 70 },
+  { id: 2, latitude: 40, longitude: 80 },
+];
+
+app.get("/api/locations", (req, res) => {
+  res.render("index.html");
+});
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
