@@ -1,10 +1,19 @@
 const express = require("express");
 const app = express();
+const port = process.env.PORT || 8080;
 
 app.use(express.static("public"));
 
-// app.get("/", function (req, res) {
-//   res.send("hello world");
-// });
+let customers = [
+  { id: 1, name: "Bob" },
+  { id: 2, name: "Prometheus" },
+];
 
-app.listen(3000);
+// HTTP GET http://localhost:8080/api/customers
+app.get("/api/customers", (req, res) => {
+  res.send(customers);
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
