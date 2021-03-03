@@ -15,3 +15,12 @@ Content-type: application/json
     "latitude": 60,
     "longitude": 60
 }
+
+###
+PUT http://localhost:8080/api/locations/1
+Content-type: application/json
+
+{
+    "magnitude": 90,
+    "altitude": 5
+}

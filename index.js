@@ -26,6 +26,12 @@ app.post("/api/locations/", (req, res) => {
   res.json(database.postWithId(body));
 });
 
+app.put("/api/locations/:id", (req, res) => {
+  let body = req.body;
+  let id = Number(req.params.id);
+  res.json(database.update(id, body));
+});
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });

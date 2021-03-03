@@ -42,4 +42,16 @@ module.exports = {
       response.statusCode = 500;
     }
   },
+  update: (id, body) => {
+    let updatedLocation = body;
+    let temp = database.find((item) => item.id === id);
+    if (temp) {
+      deleteById(id);
+      updatedLocation.id = id;
+      database.push(updatedLocation);
+      response.statusCode = 200;
+    } else {
+      response.statusCode = 500;
+    }
+  },
 };
